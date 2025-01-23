@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+         <meta charset="UTF-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <title>Creating a Form</title>
+         <style>
+                  button{
+                           width: 90px;
+                           height: 35px;
+                           background-color:yellow;
+                           padding: 2px;
+                           color: black;
+                           font-size: 15px;
+                        }
+         </style>
+
+</head>
+<body>
+         <form name="Personal">
+                  <label for="fname">First Name:</label><br>
+                  <input type="text" id="fname" name="fname"><br>
+                  <label for="lname">Last Name:</label><br>
+                  <input type="text" id="lname" name="lname"><br>
+                  <label for="dob">Date of Birth:</label><br>
+                  <input type="text" id="dob" name="dob"><br>
+                  <label for="email">Email:</label><br>
+                  <input type="email" id="email" name="email"><br>
+                  <label for="locality">Locality:</label><br>
+                  <input type="text" id="locality" name="locality">
+                  <br>
+                  <label for="password">Password:</label><br>
+                  <input type="password" id="password" name="password"><br>
+                  <label for="cpassword">Confirm Password:</label><br>
+                  <input type="password" id="confirmPassword" name="confirmPassword"><br>
+                  <br>
+                 <!--<input type="submit" value="Submit">-->
+                 <button type= "button" onclick="validateForm()">
+                           Submit
+                 </button>
+         </form>
+
+
+         <!-- Validation for the form -->
+          <script>
+                  function validateForm()
+                  {
+                           //Get the values of the form fields
+                           let fname = document.forms["personal"]["fname"].value;
+                           let lname = document.forms["personal"]["lname"].value;
+                           let dob = document.forms["personal"]["age"].value;
+                           let email = document.forms["personal"]["email"].value;
+                           let locality = document.forms["personal"]["locality"].value;
+                           let password = document.forms["personal"]["password"].value;
+                           let confirmPassword = document.forms["personal"]["confirm-password"].value;
+                           let dobPattern = /\d{2}\/\d{2}\/\d{4}$ /; .
+
+                           if (fname == "")
+                  alert("Please enter your first name.");
+                 else if (lname == "")
+                  alert("Please enter your last name.");
+                  else if (dob == "")
+                  alert("Please enter your Date of Birth.");
+                  else if (email == "")
+                  alert("Please enter your email.");
+                  else if (locality == "")
+                  alert("Please enter your locality.");
+                  else if (password == "")
+                  alert("Please enter your password.");
+                  else if (password !== confirmPassword)
+                  alert("Password do not match!.");
+                  else if (!dob.match(dobPattern))
+                  alert("Please enter a valid date of birth in the format mm/dd/yyyy");
+                  else
+                  alert("Password validation is correct!")
+                  }
+          </script>
+          <script>
+                  
+          </script>
+         
+</body>
+</html>
